@@ -27,6 +27,7 @@
     [SVProgressHUD showWithStatus:@"加载中..."];
     
     [self.viewModel requestStateListSuccess:^(id responseData) {
+        
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
         

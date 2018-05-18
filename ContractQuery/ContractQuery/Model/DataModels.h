@@ -5,4 +5,6 @@
 //  Copyright (c) 2018 __MyCompanyName__. All rights reserved.
 //
 
-#import "CTStateListData.h"#import "CTStateListBaseClass.h"
+#import "CTStateListData.h"#import "CTStateListBaseClass.h"
+#import "CTScanResultBaseClass.h"
+#import "CTScanResultData.h"

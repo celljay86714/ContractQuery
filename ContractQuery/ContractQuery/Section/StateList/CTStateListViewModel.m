@@ -10,7 +10,7 @@
 
 @implementation CTStateListViewModel
 
--(void)requestStateListSuccess:(ModelCallback)block faile:(ModelCallback)faileBack{
+-(void)requestStateListSuccess:(ModelCallback)block faile:(ModelCallback)faileBlock{
     
     [DigApiRequestManager requestContracStateWithInfo:self.parInfo header:nil resultCallback:^(BOOL success, NSDictionary *responseData, NSError *error) {
        
@@ -24,8 +24,8 @@
         }
         else{
             
-            if (faileBack) {
-                faileBack(error);
+            if (faileBlock) {
+                faileBlock(error);
             }
             
         }

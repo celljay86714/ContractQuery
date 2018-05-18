@@ -26,6 +26,10 @@
 		E21F3F2C20AE9F1000F8C27E /* CTStateListBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F3F2820AE9F0F00F8C27E /* CTStateListBaseClass.m */; };
 		E21F3F2D20AE9F1000F8C27E /* CTStateListData.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F3F2920AE9F0F00F8C27E /* CTStateListData.m */; };
 		E21F3F3120AEA17E00F8C27E /* CTStateListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F3F3020AEA17E00F8C27E /* CTStateListCell.m */; };
+		E21F3F3620AEB06100F8C27E /* CTScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F3F3520AEB06100F8C27E /* CTScanResultViewController.m */; };
+		E21F3F3C20AEB49F00F8C27E /* CTScanResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F3F3B20AEB49F00F8C27E /* CTScanResultModel.m */; };
+		E21F3F4120AEB5EE00F8C27E /* CTScanResultBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F3F3E20AEB5EE00F8C27E /* CTScanResultBaseClass.m */; };
+		E21F3F4220AEB5EE00F8C27E /* CTScanResultData.m in Sources */ = {isa = PBXBuildFile; fileRef = E21F3F4020AEB5EE00F8C27E /* CTScanResultData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,14 @@
 		E21F3F2E20AE9F2400F8C27E /* DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModels.h; sourceTree = "<group>"; };
 		E21F3F2F20AEA17E00F8C27E /* CTStateListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTStateListCell.h; sourceTree = "<group>"; };
 		E21F3F3020AEA17E00F8C27E /* CTStateListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTStateListCell.m; sourceTree = "<group>"; };
+		E21F3F3420AEB06100F8C27E /* CTScanResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTScanResultViewController.h; sourceTree = "<group>"; };
+		E21F3F3520AEB06100F8C27E /* CTScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTScanResultViewController.m; sourceTree = "<group>"; };
+		E21F3F3A20AEB49F00F8C27E /* CTScanResultModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTScanResultModel.h; sourceTree = "<group>"; };
+		E21F3F3B20AEB49F00F8C27E /* CTScanResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTScanResultModel.m; sourceTree = "<group>"; };
+		E21F3F3D20AEB5ED00F8C27E /* CTScanResultBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTScanResultBaseClass.h; sourceTree = "<group>"; };
+		E21F3F3E20AEB5EE00F8C27E /* CTScanResultBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTScanResultBaseClass.m; sourceTree = "<group>"; };
+		E21F3F3F20AEB5EE00F8C27E /* CTScanResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTScanResultData.h; sourceTree = "<group>"; };
+		E21F3F4020AEB5EE00F8C27E /* CTScanResultData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTScanResultData.m; sourceTree = "<group>"; };
 		E5589E92D84DCA2CCBD44734 /* Pods-ContractQuery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContractQuery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContractQuery/Pods-ContractQuery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,6 +256,8 @@
 				E21F3F2420AE9C3400F8C27E /* CTStateListViewModel.m */,
 				E21F3F2F20AEA17E00F8C27E /* CTStateListCell.h */,
 				E21F3F3020AEA17E00F8C27E /* CTStateListCell.m */,
+				E21F3F3320AEAFFC00F8C27E /* ScanResult */,
+				E21F3F3220AEAFD100F8C27E /* StateList */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -256,8 +270,36 @@
 				E21F3F2820AE9F0F00F8C27E /* CTStateListBaseClass.m */,
 				E21F3F2B20AE9F1000F8C27E /* CTStateListData.h */,
 				E21F3F2920AE9F0F00F8C27E /* CTStateListData.m */,
+				E21F3F3D20AEB5ED00F8C27E /* CTScanResultBaseClass.h */,
+				E21F3F3E20AEB5EE00F8C27E /* CTScanResultBaseClass.m */,
+				E21F3F3F20AEB5EE00F8C27E /* CTScanResultData.h */,
+				E21F3F4020AEB5EE00F8C27E /* CTScanResultData.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E21F3F3220AEAFD100F8C27E /* StateList */ = {
+			isa = PBXGroup;
+			children = (
+				E21F3F1D20AE993300F8C27E /* CTStateListViewController.h */,
+				E21F3F1E20AE993300F8C27E /* CTStateListViewController.m */,
+				E21F3F2320AE9C3400F8C27E /* CTStateListViewModel.h */,
+				E21F3F2420AE9C3400F8C27E /* CTStateListViewModel.m */,
+				E21F3F2F20AEA17E00F8C27E /* CTStateListCell.h */,
+				E21F3F3020AEA17E00F8C27E /* CTStateListCell.m */,
+			);
+			path = StateList;
+			sourceTree = "<group>";
+		};
+		E21F3F3320AEAFFC00F8C27E /* ScanResult */ = {
+			isa = PBXGroup;
+			children = (
+				E21F3F3420AEB06100F8C27E /* CTScanResultViewController.h */,
+				E21F3F3520AEB06100F8C27E /* CTScanResultViewController.m */,
+				E21F3F3A20AEB49F00F8C27E /* CTScanResultModel.h */,
+				E21F3F3B20AEB49F00F8C27E /* CTScanResultModel.m */,
+			);
+			path = ScanResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,6 +496,7 @@
 				81ED455920AEBCB2001F30C0 /* CTLoginViewController.m in Sources */,
 				E21F3F1720AE827700F8C27E /* MCNetWorkRequestManager.m in Sources */,
 				E21F3F2C20AE9F1000F8C27E /* CTStateListBaseClass.m in Sources */,
+				E21F3F3620AEB06100F8C27E /* CTScanResultViewController.m in Sources */,
 				E21F3F2220AE9C0000F8C27E /* CTBaseViewModel.m in Sources */,
 				E21F3F2D20AE9F1000F8C27E /* CTStateListData.m in Sources */,
 				E21F3EE220AE81AD00F8C27E /* ViewController.m in Sources */,
@@ -461,7 +504,10 @@
 				E21F3F1F20AE993300F8C27E /* CTStateListViewController.m in Sources */,
 				E21F3F3120AEA17E00F8C27E /* CTStateListCell.m in Sources */,
 				E21F3EED20AE81AD00F8C27E /* main.m in Sources */,
+				E21F3F4220AEB5EE00F8C27E /* CTScanResultData.m in Sources */,
+				E21F3F3C20AEB49F00F8C27E /* CTScanResultModel.m in Sources */,
 				E21F3EDF20AE81AD00F8C27E /* AppDelegate.m in Sources */,
+				E21F3F4120AEB5EE00F8C27E /* CTScanResultBaseClass.m in Sources */,
 				E21F3F1620AE827700F8C27E /* DigApiRequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
