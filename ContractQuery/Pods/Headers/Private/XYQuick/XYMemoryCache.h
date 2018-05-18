@@ -1,0 +1,1 @@
+../../../XYQuick/Pod/Classes/core/modules/cache/XYMemoryCache.h
