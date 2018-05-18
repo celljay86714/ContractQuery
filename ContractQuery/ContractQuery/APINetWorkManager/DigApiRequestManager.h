@@ -10,10 +10,17 @@
 
 @interface DigApiRequestManager : NSObject
 
+//登录
++ (void)requestLoginWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback;
 
-+ (DigApiRequestManager *)sharedManager;
+//获取状态
++ (void)requestContracStateWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback;
 
-- (void)registerAsNewWithInfo:(NSDictionary *)userInfo resultCallback:(NetworkRequestCallback)resultCallback;
+//上传状态
++ (void)requestPostStateWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback;
+
+//查询商户
++ (void)requestQueryStateWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback;
 
 
 @end

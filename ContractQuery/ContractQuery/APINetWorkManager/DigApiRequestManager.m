@@ -5,36 +5,56 @@
 //  Created by zejie.wu on 2018/5/7.
 //  Copyright © 2018年 Test. All rights reserved.
 //
-
 #import "DigApiRequestManager.h"
 
-@interface DigApiRequestManager()
-
-@property (strong, nonatomic) MCNetWorkRequestManager *networkManager;
-
-@end
 
 @implementation DigApiRequestManager
 
-+ (DigApiRequestManager *)sharedManager {
-    static DigApiRequestManager *sharedManager;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedManager = [[self alloc] init];
-        sharedManager.networkManager = [MCNetWorkRequestManager sharedManager];
-    });
-    
-    return sharedManager;
-}
 
-- (void)registerAsNewWithInfo:(NSDictionary *)userInfo resultCallback:(NetworkRequestCallback)resultCallback{
++ (void)requestLoginWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback
+{
     
-    [_networkManager netWorkRequestWithType:HTTPResponseTypeGET
-                                 requestURL:@"bqjr_hcms_web/notice/noticeBanner?company=BQJR"
+    [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
+                                 requestURL:@"bqsims_client/factoringContractApi/appLogin.do"
                                      header:nil
                                  parameters:userInfo
                              resultCallback:resultCallback];
 
 }
+
++ (void)requestContracStateWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback{
+    
+    [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
+                                 requestURL:@"bqsims_client/factoringContractApi/processList.do"
+                                     header:nil
+                                 parameters:userInfo
+                             resultCallback:resultCallback];
+
+    
+}
+
++ (void)requestPostStateWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback{
+    
+    [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
+                                 requestURL:@"bqsims_client/factoringContractApi/changeReceiveInfo.do"
+                                     header:nil
+                                 parameters:userInfo
+                             resultCallback:resultCallback];
+
+}
+
++ (void)requestQueryStateWithInfo:(NSDictionary *)userInfo header:(NSDictionary *)header resultCallback:(NetworkRequestCallback)resultCallback{
+    
+    [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
+                                 requestURL:@"bqsims_client/factoringContractApi/contractReceiveDetail.do"
+                                     header:nil
+                                 parameters:userInfo
+                             resultCallback:resultCallback];
+
+    
+}
+
+
+
 
 @end

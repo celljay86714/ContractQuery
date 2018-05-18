@@ -10,12 +10,12 @@
 #define NetWorkDefine_h
 
 
-#define DEVELOPING_HOST                 @"http://10.0.98.52:8800/"
-#define TESTING_HOST                    @"https://sitfchcmsfont.bqjr.cn/"
-#define PRODUCT_HOST                    @"http://www.bqjr.com/"
+#define SIT_HOST                 @"http://10.83.20.215:7012/"
+#define UAT_HOST                 @"http://10.83.34.127:7012/"
+#define PRODUCT_HOST             @"http://sims.bqjr.cn/"
 
 
-#define CurrentAPIHost                    TESTING_HOST
+#define CurrentAPIHost                    SIT_HOST
 
 
 #endif /* NetWorkDefine_h */
