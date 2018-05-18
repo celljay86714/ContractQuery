@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CTStateListViewController.h"
+#import "CTScanResultViewController.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,7 @@
     
    UIStoryboard *storyBoard= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    CTStateListViewController *viewController =[storyBoard instantiateViewControllerWithIdentifier:@"CTStateListViewController"];
+    CTScanResultViewController *viewController =[storyBoard instantiateViewControllerWithIdentifier:@"CTScanResultViewController"];
     
     
     [self.view addSubview:viewController.view];

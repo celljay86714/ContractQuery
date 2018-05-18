@@ -10,4 +10,8 @@
 
 @interface CTScanResultModel : CTBaseViewModel
 
+@property (nonatomic, strong)CTScanResultBaseClass *model;
+
+-(void)requestScanResultSuccess:(ModelCallback)block faile:(ModelCallback)faileBlock;
+
 @end

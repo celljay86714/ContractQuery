@@ -14,8 +14,10 @@
     
     if (self = [super init]) {
         
-        self.parInfo =@{@"accessKey":@"Rgr&574@65HBq3Gp$m2exytWQ263X!$"};
+        self.parInfo = [NSMutableDictionary  new];
+        [self.parInfo setObject:@"Rgr&574@65HBq3Gp$m2exytWQ263X!$" forKey:@"accessKey"];
     }
+    
     
     return self;
     
