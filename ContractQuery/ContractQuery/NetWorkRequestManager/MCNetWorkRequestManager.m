@@ -67,6 +67,7 @@
     NSLog(@"----REQUEST HEADER----[%@]", header);
     NSLog(@"----REQUEST PARAMETERS----[%@]", parameters);
     
+    
     switch (requestType) {
         
         case HTTPResponseTypeGET:

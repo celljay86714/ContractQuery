@@ -17,7 +17,7 @@
     [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
                                  requestURL:@"bqsims_client/factoringContractApi/appLogin.do"
                                      header:nil
-                                 parameters:userInfo
+                                 parameters:header
                              resultCallback:resultCallback];
 
 }
@@ -26,7 +26,7 @@
     
     [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
                                  requestURL:@"bqsims_client/factoringContractApi/processList.do"
-                                     header:nil
+                                     header:header
                                  parameters:userInfo
                              resultCallback:resultCallback];
 
@@ -37,7 +37,7 @@
     
     [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
                                  requestURL:@"bqsims_client/factoringContractApi/changeReceiveInfo.do"
-                                     header:nil
+                                     header:header
                                  parameters:userInfo
                              resultCallback:resultCallback];
 
@@ -47,7 +47,7 @@
     
     [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
                                  requestURL:@"bqsims_client/factoringContractApi/contractReceiveDetail.do"
-                                     header:nil
+                                     header:header
                                  parameters:userInfo
                              resultCallback:resultCallback];
 

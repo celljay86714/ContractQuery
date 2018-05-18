@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CTStateListViewController.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+   UIStoryboard *storyBoard= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    CTStateListViewController *viewController =[storyBoard instantiateViewControllerWithIdentifier:@"CTStateListViewController"];
+    
+    
+    [self.view addSubview:viewController.view];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

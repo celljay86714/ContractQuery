@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, HTTPResponseCode) {
-    CODE_OK = 0,                                    // 成功
-    CODE_FORBIDDEN = 1,                             // 禁止访问
+    CODE_OK = 1,                                    // 成功
+//    CODE_FORBIDDEN = 1,                             // 禁止访问
     CODE_NOT_FOUND = 2,                             // 找不到
     CODE_TOKEN_EXPIRED = 101,                       // access token 过期
     CODE_INSECURE_TRANSPORT = 102,                  // 不安全的传输方式

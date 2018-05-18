@@ -17,10 +17,12 @@
 #import <AFNetworking/AFNetworking.h>
 #import "FDStackView.h"
 #import "Masonry.h"
-#import "MBProgressHUD.h"
+#import "SVProgressHUD.h"
 #import "XYQuick.h"
 #import "NetWorkDefine.h"
 #import "MCNetWorkRequestManager.h"
+#import "DigApiRequestManager.h"
+#import "DataModels.h"
 
 
 #endif /* MCPrefixHeader_pch */
