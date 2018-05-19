@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CTLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    CTLoginViewController *rootView = [[CTLoginViewController alloc] init];
+    
+    self.navController = [[UINavigationController alloc] initWithRootViewController:rootView];
+    self.window.rootViewController = self.navController;
+    
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

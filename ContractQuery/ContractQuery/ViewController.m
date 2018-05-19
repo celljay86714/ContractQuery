@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CTStateListViewController.h"
 #import "CTScanResultViewController.h"
+#import "CTLoginViewController.h"
 
 @interface ViewController ()
 
@@ -19,13 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   UIStoryboard *storyBoard= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//   UIStoryboard *storyBoard= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//
+//    CTScanResultViewController *viewController =[storyBoard instantiateViewControllerWithIdentifier:@"CTScanResultViewController"];
+//
+//
+//    [self.view addSubview:viewController.view];
     
-    CTScanResultViewController *viewController =[storyBoard instantiateViewControllerWithIdentifier:@"CTScanResultViewController"];
     
-    
+    CTLoginViewController *viewController = [[CTLoginViewController alloc] init];
     [self.view addSubview:viewController.view];
-    
+ 
     // Do any additional setup after loading the view, typically from a nib.
 }
 
