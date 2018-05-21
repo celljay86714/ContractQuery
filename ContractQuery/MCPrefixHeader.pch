@@ -23,6 +23,7 @@
 #import "MCNetWorkRequestManager.h"
 #import "DigApiRequestManager.h"
 #import "DataModels.h"
+#import "Config.h"
 
 
 #endif /* MCPrefixHeader_pch */
