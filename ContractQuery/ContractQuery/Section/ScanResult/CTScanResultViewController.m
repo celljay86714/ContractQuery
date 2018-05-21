@@ -43,8 +43,16 @@
 
         
     }];
+    
+    [self.button addTarget:self action:@selector(buttonseleted:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+
+-(void)buttonseleted:(UIButton *)button{
+    
+    [self.view removeFromSuperview];
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

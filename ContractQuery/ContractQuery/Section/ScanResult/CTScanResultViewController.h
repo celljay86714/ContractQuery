@@ -20,6 +20,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *retailCity_label;
 @property (nonatomic, strong) IBOutlet UILabel *updateTms_label;
 @property (nonatomic, strong) IBOutlet UILabel *process_label;
+@property (nonatomic, strong) IBOutlet UIButton *button;
 
 @property (nonatomic, strong) NSString *codeString;
 

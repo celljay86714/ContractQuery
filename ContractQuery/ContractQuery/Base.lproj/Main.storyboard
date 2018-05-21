@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zgq-Yi-llB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zgq-Yi-llB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,6 +89,37 @@
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="tpU-rP-x2t">
+                            <rect key="frame" x="0.0" y="307" width="375" height="343"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scan_small.png" translatesAutoresizingMaskIntoConstraints="NO" id="uWx-sJ-I9Q">
+                                    <rect key="frame" x="103" y="294" width="32" height="32"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="继续扫描查询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edt-i6-R1t">
+                                    <rect key="frame" x="161.5" y="300" width="110.5" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wN-YZ-3CD">
+                                    <rect key="frame" x="0.0" y="279" width="375" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="1Q8-ez-LZs"/>
+                                    </constraints>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Edt-i6-R1t" secondAttribute="trailing" constant="103" id="7zJ-CO-M6F"/>
+                                <constraint firstAttribute="bottom" secondItem="uWx-sJ-I9Q" secondAttribute="bottom" constant="17" id="Gll-Z0-egy"/>
+                                <constraint firstAttribute="trailing" secondItem="9wN-YZ-3CD" secondAttribute="trailing" id="JID-OM-XlM"/>
+                                <constraint firstItem="uWx-sJ-I9Q" firstAttribute="leading" secondItem="tpU-rP-x2t" secondAttribute="leading" constant="103" id="Jld-wR-bjp"/>
+                                <constraint firstItem="9wN-YZ-3CD" firstAttribute="leading" secondItem="tpU-rP-x2t" secondAttribute="leading" id="bNC-Xg-YoP"/>
+                                <constraint firstAttribute="bottom" secondItem="9wN-YZ-3CD" secondAttribute="bottom" id="hde-6L-Y7U"/>
+                                <constraint firstAttribute="bottom" secondItem="Edt-i6-R1t" secondAttribute="bottom" constant="22" id="w0s-gG-Ce0"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="WXx-lz-4XE">
@@ -366,6 +397,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="button" destination="9wN-YZ-3CD" id="Nga-an-2wC"/>
                         <outlet property="contractNo_label" destination="46d-F7-EWL" id="UdP-xk-NX4"/>
                         <outlet property="linkPhone_label" destination="BOm-cc-tRF" id="Zgr-DO-wmx"/>
                         <outlet property="linkman_label" destination="VcU-JD-X9g" id="oWk-Dl-b4i"/>
@@ -378,10 +410,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwm-am-MJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-177" y="-390"/>
+            <point key="canvasLocation" x="-178.40000000000001" y="-390.85457271364322"/>
         </scene>
     </scenes>
     <resources>
+        <image name="scan_small.png" width="32" height="32"/>
         <image name="success" width="48" height="48"/>
     </resources>
 </document>
