@@ -20,6 +20,7 @@
     
     
     self.viewModel = [CTScanResultModel new];
+    self.viewModel.codeString = self.codeString;
     
     [SVProgressHUD showWithStatus:@"加载中..."];
     

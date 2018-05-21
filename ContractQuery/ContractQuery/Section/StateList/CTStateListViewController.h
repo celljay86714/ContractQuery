@@ -9,10 +9,15 @@
 #import "CTBaseViewController.h"
 #import "CTStateListViewModel.h"
 
+typedef void (^ControllerCallback)(id responseData);
+
+
 @interface CTStateListViewController : CTBaseViewController<UITableViewDelegate,UITableViewDataSource>
 
 
 @property (nonatomic, strong)CTStateListViewModel *viewModel;
+
+@property (nonatomic, copy)ControllerCallback callBack;
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 

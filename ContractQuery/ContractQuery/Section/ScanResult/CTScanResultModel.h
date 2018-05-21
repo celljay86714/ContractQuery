@@ -11,6 +11,7 @@
 @interface CTScanResultModel : CTBaseViewModel
 
 @property (nonatomic, strong)CTScanResultBaseClass *model;
+@property (nonatomic, strong)NSString *codeString;
 
 -(void)requestScanResultSuccess:(ModelCallback)block faile:(ModelCallback)faileBlock;
 

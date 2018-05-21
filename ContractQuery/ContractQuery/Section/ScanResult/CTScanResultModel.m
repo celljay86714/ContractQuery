@@ -14,7 +14,7 @@
 -(void)requestScanResultSuccess:(ModelCallback)block faile:(ModelCallback)faileBlock{
     
     
-    [self.parInfo setObject:@"201610191005183811" forKey:@"aplyId"];
+    [self.parInfo setObject:self.codeString forKey:@"aplyId"];
     
     [DigApiRequestManager requestQueryStateWithInfo:self.parInfo header:nil resultCallback:^(BOOL success, NSDictionary *responseData, NSError *error) {
         

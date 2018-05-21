@@ -67,6 +67,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    CTStateListData *subData=self.viewModel.model.data[indexPath.row];
+    NSString *codeString  =   subData.processId;
+    
+    
+    if (self.callBack) {
+        self.callBack(codeString);
+    }
     
 }
 
