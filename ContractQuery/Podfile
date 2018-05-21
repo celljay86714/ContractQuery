@@ -31,7 +31,7 @@ def pods
     # ----------U----------
     pod 'UITableView+FDTemplateLayoutCell', '~> 1.6'
 
-
+    pod 'SGQRCode'
 end
 
 target 'ContractQuery' do

@@ -56,7 +56,7 @@ static void __XYReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
 
 - (void)uxy_safeSetObject:(id)anObject forKey:(id <NSCopying>)aKey
 {
-    aKey ? (aKey[aKey] = anObject) : nil;
+//    aKey ? (aKey[aKey] = anObject) : nil;
 }
 
 - (void)uxy_safeSetObject:(id)obj forKeyedSubscript:(id <NSCopying>)key
