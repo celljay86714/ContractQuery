@@ -20,16 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//   UIStoryboard *storyBoard= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//
-//    CTScanResultViewController *viewController =[storyBoard instantiateViewControllerWithIdentifier:@"CTScanResultViewController"];
-//
-//
-//    [self.view addSubview:viewController.view];
-    
-    
-    CTLoginViewController *viewController = [[CTLoginViewController alloc] init];
+   UIStoryboard *storyBoard= [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+    CTScanResultViewController *viewController =[storyBoard instantiateViewControllerWithIdentifier:@"CTScanResultViewController"];
+
+
     [self.view addSubview:viewController.view];
+    
+    
 
     // Do any additional setup after loading the view, typically from a nib.
 }
