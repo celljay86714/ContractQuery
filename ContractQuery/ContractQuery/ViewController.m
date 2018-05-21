@@ -26,6 +26,8 @@
     
     [self.view addSubview:viewController.view];
     
+    NSLog(@"111");
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
