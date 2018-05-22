@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814C1F6320B3B304002E0F73 /* CTUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F6220B3B304002E0F73 /* CTUserManager.m */; };
+		814C1F6920B3B418002E0F73 /* CTLoginBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F6820B3B418002E0F73 /* CTLoginBaseClass.m */; };
+		814C1F6C20B3B46F002E0F73 /* CTLoginData.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F6B20B3B46F002E0F73 /* CTLoginData.m */; };
+		814C1F6F20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F6E20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m */; };
 		814C94B920B2A2C400D1CD05 /* CTBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C94B820B2A2C400D1CD05 /* CTBottomView.m */; };
 		81ED455920AEBCB2001F30C0 /* CTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81ED455820AEBCB2001F30C0 /* CTLoginViewController.m */; };
 		81ED456020AEC8FB001F30C0 /* CTStateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81ED455A20AEC8FB001F30C0 /* CTStateListViewController.m */; };
@@ -65,6 +69,14 @@
 /* Begin PBXFileReference section */
 		41C1FF23999426F99D4AB589 /* libPods-ContractQuery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContractQuery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDDBAEB65BCA214B4285B9A /* Pods-ContractQuery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContractQuery.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContractQuery/Pods-ContractQuery.release.xcconfig"; sourceTree = "<group>"; };
+		814C1F6120B3B304002E0F73 /* CTUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTUserManager.h; sourceTree = "<group>"; };
+		814C1F6220B3B304002E0F73 /* CTUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTUserManager.m; sourceTree = "<group>"; };
+		814C1F6720B3B418002E0F73 /* CTLoginBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTLoginBaseClass.h; sourceTree = "<group>"; };
+		814C1F6820B3B418002E0F73 /* CTLoginBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTLoginBaseClass.m; sourceTree = "<group>"; };
+		814C1F6A20B3B46F002E0F73 /* CTLoginData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTLoginData.h; sourceTree = "<group>"; };
+		814C1F6B20B3B46F002E0F73 /* CTLoginData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTLoginData.m; sourceTree = "<group>"; };
+		814C1F6D20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTProtocolManagerDetailBaseClass.h; sourceTree = "<group>"; };
+		814C1F6E20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTProtocolManagerDetailBaseClass.m; sourceTree = "<group>"; };
 		814C94B720B2A2C400D1CD05 /* CTBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTBottomView.h; sourceTree = "<group>"; };
 		814C94B820B2A2C400D1CD05 /* CTBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTBottomView.m; sourceTree = "<group>"; };
 		81ED455720AEBCB2001F30C0 /* CTLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTLoginViewController.h; sourceTree = "<group>"; };
@@ -166,6 +178,15 @@
 				7EDDBAEB65BCA214B4285B9A /* Pods-ContractQuery.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		814C1F6020B3B2E0002E0F73 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				814C1F6120B3B304002E0F73 /* CTUserManager.h */,
+				814C1F6220B3B304002E0F73 /* CTUserManager.m */,
+			);
+			path = UserManager;
 			sourceTree = "<group>";
 		};
 		81ED455620AEBB74001F30C0 /* Login */ = {
@@ -313,6 +334,7 @@
 		E21F3F1C20AE98F700F8C27E /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				814C1F6020B3B2E0002E0F73 /* UserManager */,
 				81F1570720AFFC1B001405BD /* ProtocolManager */,
 				81ED455620AEBB74001F30C0 /* Login */,
 				E21F3F3320AEAFFC00F8C27E /* ScanResult */,
@@ -333,6 +355,12 @@
 				E21F3F3E20AEB5EE00F8C27E /* CTScanResultBaseClass.m */,
 				E21F3F3F20AEB5EE00F8C27E /* CTScanResultData.h */,
 				E21F3F4020AEB5EE00F8C27E /* CTScanResultData.m */,
+				814C1F6720B3B418002E0F73 /* CTLoginBaseClass.h */,
+				814C1F6820B3B418002E0F73 /* CTLoginBaseClass.m */,
+				814C1F6A20B3B46F002E0F73 /* CTLoginData.h */,
+				814C1F6B20B3B46F002E0F73 /* CTLoginData.m */,
+				814C1F6D20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.h */,
+				814C1F6E20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -568,11 +596,15 @@
 				81F1570A20AFFC64001405BD /* CTProtocolManagerViewController.m in Sources */,
 				E21F3F1B20AE98F100F8C27E /* CTBaseViewController.m in Sources */,
 				81ED455920AEBCB2001F30C0 /* CTLoginViewController.m in Sources */,
+				814C1F6320B3B304002E0F73 /* CTUserManager.m in Sources */,
 				E21F3F1720AE827700F8C27E /* MCNetWorkRequestManager.m in Sources */,
+				814C1F6C20B3B46F002E0F73 /* CTLoginData.m in Sources */,
 				E21F3F2C20AE9F1000F8C27E /* CTStateListBaseClass.m in Sources */,
 				81F1572320B01088001405BD /* CTProtocolManagerTableViewCell.m in Sources */,
+				814C1F6F20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m in Sources */,
 				E21F3F3620AEB06100F8C27E /* CTScanResultViewController.m in Sources */,
 				E21F3F2220AE9C0000F8C27E /* CTBaseViewModel.m in Sources */,
+				814C1F6920B3B418002E0F73 /* CTLoginBaseClass.m in Sources */,
 				81F1572020AFFF90001405BD /* CTProtocolManagerDetailViewController.m in Sources */,
 				E21F3F2D20AE9F1000F8C27E /* CTStateListData.m in Sources */,
 				E21F3EE220AE81AD00F8C27E /* ViewController.m in Sources */,

@@ -14,6 +14,18 @@
 
 @implementation CTScanResultViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -50,8 +62,7 @@
 
 -(void)buttonseleted:(UIButton *)button{
     
-    [self.view removeFromSuperview];
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

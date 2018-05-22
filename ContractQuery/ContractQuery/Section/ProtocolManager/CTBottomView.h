@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^BottomViewClickBlock) (void);
 @interface CTBottomView : UIView
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *stateBtn;
+@property (nonatomic, copy) BottomViewClickBlock bottomViewClickBlock;
 @end
