@@ -60,7 +60,9 @@
 
 - (void)stateBtnClick:(UIButton *)sender
 {
-    
+    if (self.bottomViewClickBlock) {
+        self.bottomViewClickBlock();
+    }
 }
 
 @end

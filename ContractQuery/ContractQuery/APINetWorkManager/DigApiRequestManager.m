@@ -16,8 +16,8 @@
     
     [[MCNetWorkRequestManager sharedManager] netWorkRequestWithType:HTTPResponseTypePOST
                                  requestURL:@"bqsims_client/factoringContractApi/appLogin.do"
-                                     header:nil
-                                 parameters:header
+                                     header:header
+                                 parameters:userInfo
                              resultCallback:resultCallback];
 
 }

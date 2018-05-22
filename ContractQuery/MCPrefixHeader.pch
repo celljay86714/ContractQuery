@@ -24,6 +24,7 @@
 #import "DigApiRequestManager.h"
 #import "DataModels.h"
 #import "Config.h"
+#import "CTUserManager.h"
 
 
 #endif /* MCPrefixHeader_pch */

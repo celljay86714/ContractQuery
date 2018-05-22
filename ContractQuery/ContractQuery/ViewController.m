@@ -28,6 +28,8 @@
     [self.view addSubview:viewController.view];
     
     
+//    CTLoginViewController *viewController = [[CTLoginViewController alloc] init];
+//    [self.view addSubview:viewController.view];
 
     // Do any additional setup after loading the view, typically from a nib.
 }
