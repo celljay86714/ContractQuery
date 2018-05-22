@@ -23,6 +23,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar setBarTintColor:kRGBACOLOR(44, 173, 76, 1.0)];
 }
 
 
@@ -30,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNavTitle:@"商户保理协议管理"];
-    [self.navigationController.navigationBar setBarTintColor:kRGBACOLOR(44, 173, 76, 1.0)];
+    
     
     self.view.backgroundColor = kRGBACOLOR(207, 207, 207, 1.0);
     self.protocolManagerTableView = [UITableView new];
