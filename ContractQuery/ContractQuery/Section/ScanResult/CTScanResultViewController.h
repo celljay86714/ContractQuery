@@ -22,6 +22,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *process_label;
 @property (nonatomic, strong) IBOutlet UIButton *button;
 
+@property (nonatomic, strong) IBOutlet UIView *footView;
+
+
 @property (nonatomic, strong) NSString *codeString;
 
 @end

@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--State List View Controller-->
+        <!--请选择协议状态-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController restorationIdentifier="CTStateListViewController" storyboardIdentifier="CTStateListViewController" id="BYZ-38-t0r" customClass="CTStateListViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="CTStateListViewController" storyboardIdentifier="CTStateListViewController" title="请选择协议状态" id="BYZ-38-t0r" customClass="CTStateListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,25 +22,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y5S-5Y-FWy">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="0WF-bT-G1v">
-                                    <rect key="frame" x="0.0" y="0.0" width="327" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择协议状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZR-HU-6i2">
-                                            <rect key="frame" x="0.0" y="0.0" width="327" height="68"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.13441315293312073" green="0.70407217741012573" blue="0.28473949432373047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="tZR-HU-6i2" secondAttribute="bottom" id="Bjw-hR-5mG"/>
-                                        <constraint firstAttribute="trailing" secondItem="tZR-HU-6i2" secondAttribute="trailing" id="RIT-bw-OdX"/>
-                                        <constraint firstItem="tZR-HU-6i2" firstAttribute="leading" secondItem="0WF-bT-G1v" secondAttribute="leading" id="dEg-Ep-eyg"/>
-                                        <constraint firstItem="tZR-HU-6i2" firstAttribute="top" secondItem="0WF-bT-G1v" secondAttribute="top" id="v7q-dg-b40"/>
-                                    </constraints>
-                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="9oN-td-KLq"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="PfZ-JV-oJS"/>
@@ -62,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-860" y="-177"/>
+            <point key="canvasLocation" x="-1177" y="-165"/>
         </scene>
         <!--Scan Result View Controller-->
         <scene sceneID="0bF-bD-7oY">
@@ -77,7 +58,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="扫描成功，以下为查询结果：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOz-sP-gm3">
-                                    <rect key="frame" x="100" y="0.0" width="314" height="63"/>
+                                    <rect key="frame" x="100" y="0.0" width="252" height="63"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
@@ -91,20 +72,20 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="tpU-rP-x2t">
-                            <rect key="frame" x="0.0" y="355" width="375" height="343"/>
+                            <rect key="frame" x="0.0" y="355" width="375" height="279"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scan_small.png" translatesAutoresizingMaskIntoConstraints="NO" id="uWx-sJ-I9Q">
-                                    <rect key="frame" x="103" y="294" width="32" height="32"/>
+                                    <rect key="frame" x="103" y="230" width="32" height="32"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="继续扫描查询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edt-i6-R1t">
-                                    <rect key="frame" x="161.5" y="300" width="110.5" height="21"/>
+                                    <rect key="frame" x="161.5" y="236" width="110.5" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wN-YZ-3CD">
-                                    <rect key="frame" x="0.0" y="279" width="375" height="64"/>
+                                    <rect key="frame" x="0.0" y="215" width="375" height="64"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="64" id="1Q8-ez-LZs"/>
                                     </constraints>
@@ -399,6 +380,7 @@
                     <connections>
                         <outlet property="button" destination="9wN-YZ-3CD" id="Nga-an-2wC"/>
                         <outlet property="contractNo_label" destination="46d-F7-EWL" id="UdP-xk-NX4"/>
+                        <outlet property="footView" destination="tpU-rP-x2t" id="wZN-98-Qwu"/>
                         <outlet property="linkPhone_label" destination="BOm-cc-tRF" id="Zgr-DO-wmx"/>
                         <outlet property="linkman_label" destination="VcU-JD-X9g" id="oWk-Dl-b4i"/>
                         <outlet property="process_label" destination="yAl-dh-xPs" id="XhB-BP-DOj"/>
@@ -410,7 +392,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwm-am-MJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-466" y="-419"/>
+            <point key="canvasLocation" x="-554.39999999999998" y="-424.13793103448279"/>
         </scene>
     </scenes>
     <resources>

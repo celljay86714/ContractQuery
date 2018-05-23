@@ -37,6 +37,8 @@
         
         [SVProgressHUD showErrorWithStatus:@"请求失败"];
     }];
+    
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor greenColor]];
     // Do any additional setup after loading the view.
 }
 
