@@ -8,6 +8,7 @@
 
 #import "CTLoginViewController.h"
 #import "CTProtocolManagerViewController.h"
+#import "CTLoginBaseClass.h"
 
 @interface CTLoginViewController ()<UITextFieldDelegate>{
     CGFloat keyboardHeight;
@@ -20,6 +21,7 @@
 @property (nonatomic,strong) UITextField *passwordTextField;
 @property (nonatomic,strong) UIButton *loginBtn;
 @property (nonatomic,strong) UILabel *versionLabel;
+@property (nonatomic, strong)CTLoginBaseClass *model;
 @end
 
 @implementation CTLoginViewController
@@ -54,6 +56,9 @@
     [self.mainScrollView mas_makeConstraints:^(MASConstraintMaker *make){
         make.edges.mas_equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mainScrollViewClick:)];
+    [self.mainScrollView addGestureRecognizer:tap];
     
     
     UIView *contentView = [UIView new];
@@ -101,6 +106,8 @@
     
     self.userNameTextField = [UITextField new];
     self.userNameTextField.placeholder = @"请输入账号";
+    self.userNameTextField.text = @"A000001";
+    self.userNameTextField.delegate = self;
     [loginView addSubview:self.userNameTextField];
     [self.userNameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(loginView);
@@ -135,7 +142,9 @@
     
     self.passwordTextField = [UITextField new];
     self.passwordTextField.placeholder = @"请输入密码";
+    self.passwordTextField.text = @"123456";
     self.passwordTextField.secureTextEntry = YES;
+    self.passwordTextField.delegate = self;
     [loginView addSubview:self.passwordTextField];
     [self.passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(passwordLabel);
@@ -174,38 +183,63 @@
 
 - (void)loginBtnClick:(UIButton *)sender
 {
-//    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-//    [parameters setObject:@"Rgr&574@65HBq3Gp$m2exytWQ263X!$" forKey:@"accessKey"];
-//    [parameters setObject:@"B000001" forKey:@"userId"];
-////    [parameters setObject:@"张三" forKey:@"userName"];
-//    [parameters setObject:@"123456" forKey:@"password"];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:@"Rgr&574@65HBq3Gp$m2exytWQ263X!$" forKey:@"accessKey"];
+    [parameters setObject:self.userNameTextField.text forKey:@"userId"];
+    [parameters setObject:self.passwordTextField.text forKey:@"password"];
+
+    [DigApiRequestManager requestLoginWithInfo:parameters header:nil resultCallback:^(BOOL success, NSDictionary *responseData, NSError *error) {
+
+        NSLog(@"----------%@,%@",responseData,error);
+        if (success) {
+
+            self.model = [CTLoginBaseClass modelObjectWithDictionary:responseData];
+            [CTUserManager sharedInstance].userId = responseData[@"data"][@"userId"];
+            [CTUserManager sharedInstance].userName = responseData[@"data"][@"userName"];
 //
-//    [DigApiRequestManager requestLoginWithInfo:parameters header:nil resultCallback:^(BOOL success, NSDictionary *responseData, NSError *error) {
-//
-//        NSLog(@"----------%@,%@",responseData,error);
-//        if (success) {
-//
-////            self.model = [CTScanResultBaseClass modelObjectWithDictionary:responseData];
-////
-////            if (block) {
-////                block(self.model);
-////            }
-//        }
-//        else{
-//
-////            if (faileBlock) {
-////                faileBlock(error);
-////            }
-//
-//        }
-//
-//
-//    }];
-    
-    CTProtocolManagerViewController *view = [[CTProtocolManagerViewController alloc] init];
-    [self.navigationController pushViewController:view animated:YES];
+//            if (block) {
+//                block(self.model);
+//            }
+            CTProtocolManagerViewController *view = [[CTProtocolManagerViewController alloc] init];
+            [self.navigationController pushViewController:view animated:YES];
+        }
+        else{
+
+//            if (faileBlock) {
+//                faileBlock(error);
+//            }
+
+        }
+
+
+    }];
+
+
 }
 
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.mainScrollView.contentOffset = CGPointMake(0, 0);
+    self.mainScrollView.contentSize = CGSizeMake(self.mainScrollView.frame.size.width, self.mainScrollView.frame.size.height);
+    [UIView commitAnimations];
+    return YES;
+}
+
+
+- (void)mainScrollViewClick:(UITapGestureRecognizer *)sender
+{
+    [self.userNameTextField endEditing:YES];
+    [self.passwordTextField endEditing:YES];
+}
 
 #pragma mark - Keyboard Observer
 

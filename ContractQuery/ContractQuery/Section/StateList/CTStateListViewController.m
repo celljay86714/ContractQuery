@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     
     [self.tableView registerClass:[CTStateListCell class] forCellReuseIdentifier:@"StateListCell"];
@@ -41,7 +43,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.viewModel.model.data.count;
+    NSUInteger a = self.viewModel.model.data.count;
+    
+    return a;
 }
 
 
@@ -68,11 +72,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     CTStateListData *subData=self.viewModel.model.data[indexPath.row];
-    NSString *codeString  =   subData.processId;
+//    NSString *codeString  =   subData.processId;
     
     
     if (self.callBack) {
-        self.callBack(codeString);
+        self.callBack(subData);
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
 }

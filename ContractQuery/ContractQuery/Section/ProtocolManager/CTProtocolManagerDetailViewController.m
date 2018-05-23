@@ -10,12 +10,21 @@
 #import <SGQRCode/SGQRCode.h>
 //#import "ScanSuccessJumpVC.h"
 #import "CTBottomView.h"
+#import "CTStateListViewController.h"
+#import "CTScanResultViewController.h"
+#import "CTStateListData.h"
+#import "CTScanResultViewController.h"
+#import "CTProtocolManagerDetailBaseClass.h"
 
 @interface CTProtocolManagerDetailViewController ()<SGQRCodeScanManagerDelegate, SGQRCodeAlbumManagerDelegate>
 
 @property (nonatomic, strong) SGQRCodeScanManager *manager;
 @property (nonatomic, strong) SGQRCodeScanningView *scanningView;
 @property (nonatomic, strong) UILabel *promptLabel;
+@property (nonatomic, strong) CTStateListData *stateListData;
+@property (nonatomic, strong) NSString *result;
+@property (nonatomic, strong) CTBottomView *bottomView;
+@property (nonatomic, strong) CTProtocolManagerDetailBaseClass *model;
 @end
 
 @implementation CTProtocolManagerDetailViewController
@@ -70,9 +79,29 @@
 
 - (void)addBottomView
 {
-    CTBottomView *bottomView = [[CTBottomView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight-64-64, kMainScreenWidth, 64)];
-    bottomView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:bottomView];
+    self.bottomView = [[CTBottomView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight-64-64, kMainScreenWidth, 64)];
+    self.bottomView.backgroundColor = [UIColor whiteColor];
+    
+    __weak typeof(self) weakSelf = self;
+    self.bottomView.bottomViewClickBlock = ^(){
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        CTStateListViewController *viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CTStateListViewController"];
+        
+        
+        [weakSelf.navigationController pushViewController:viewController animated:YES];
+        
+        
+        viewController.callBack = ^(id responseData) {
+            
+            weakSelf.stateListData = responseData;
+//            [weakSelf.bottomView.stateBtn setTitle:weakSelf.stateListData.processName forState:UIControlStateNormal];
+            [weakSelf.bottomView updateStateLabelWithText:weakSelf.stateListData.processName];
+            //request
+            
+            
+        };
+    };
+    [self.view addSubview:self.bottomView];
 }
 
 
@@ -168,9 +197,104 @@
 //        jumpVC.comeFromVC = ScanSuccessJumpComeFromWB;
 //        jumpVC.jump_URL = [obj stringValue];
 //        [self.navigationController pushViewController:jumpVC animated:YES];
+        self.result = [obj stringValue];
+        
+        if (self.index == 0) {
+            NSString *codeString = self.stateListData.processId;
+            if (codeString) {
+                [self changeReceiveInfoRequest];
+                
+            }
+            else
+            {
+                
+                UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                CTStateListViewController *viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CTStateListViewController"];
+                
+                
+                [self.navigationController pushViewController:viewController animated:YES];
+                
+                
+                viewController.callBack = ^(id responseData) {
+                    
+                    self.stateListData = responseData;
+                    
+                    //request
+                    [self changeReceiveInfoRequest];
+                    
+                };
+            }
+        }
+        else if (self.index == 1)
+        {
+            
+            UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            CTScanResultViewController *viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CTScanResultViewController"];
+            NSArray *numArray = [self.result componentsSeparatedByString:@","];
+            viewController.codeString = numArray[0];
+            
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+        
+        
+        
     } else {
         NSLog(@"暂未识别出扫描的二维码");
     }
+}
+
+- (void)changeReceiveInfoRequest
+{
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:@"Rgr&574@65HBq3Gp$m2exytWQ263X!$" forKey:@"accessKey"];
+    NSArray *numArray = [self.result componentsSeparatedByString:@","];
+    NSLog(@"%@",self.result);
+    [parameters setObject:numArray[1] forKey:@"contractNo"];
+    
+    
+    [parameters setObject:numArray[0] forKey:@"aplyId"];
+    
+    NSString *codeString = self.stateListData.processId;
+    [parameters setObject:codeString forKey:@"processId"];
+    
+    NSString *userId = [CTUserManager sharedInstance].userId;
+    [parameters setObject:userId forKey:@"userId"];
+
+    [DigApiRequestManager requestPostStateWithInfo:parameters header:nil resultCallback:^(BOOL success, NSDictionary *responseData, NSError *error) {
+
+        NSLog(@"----------%@,%@",responseData,error);
+        
+        if (success) {
+
+            self.model = [CTProtocolManagerDetailBaseClass modelObjectWithDictionary:responseData];
+            
+            NSString *message = self.model.message;
+            [SVProgressHUD showInfoWithStatus:message];
+            
+            [_manager startRunning];
+            //            self.model = [CTScanResultBaseClass modelObjectWithDictionary:responseData];
+            //
+            //            if (block) {
+            //                block(self.model);
+            //            }
+
+        }
+        else{
+
+            self.model = [CTProtocolManagerDetailBaseClass modelObjectWithDictionary:responseData];
+            
+            NSString *message = self.model.message;
+            [SVProgressHUD showErrorWithStatus:message];
+            
+            [_manager startRunning];
+            //            if (faileBlock) {
+            //                faileBlock(error);
+            //            }
+
+        }
+
+
+    }];
 }
 
 - (UILabel *)promptLabel {
@@ -178,7 +302,7 @@
         _promptLabel = [[UILabel alloc] init];
         _promptLabel.backgroundColor = [UIColor clearColor];
         CGFloat promptLabelX = 0;
-        CGFloat promptLabelY = 0.73 * self.view.frame.size.height;
+        CGFloat promptLabelY = 0.73 * self.view.frame.size.height-64;
         CGFloat promptLabelW = self.view.frame.size.width;
         CGFloat promptLabelH = 25;
         _promptLabel.frame = CGRectMake(promptLabelX, promptLabelY, promptLabelW, promptLabelH);

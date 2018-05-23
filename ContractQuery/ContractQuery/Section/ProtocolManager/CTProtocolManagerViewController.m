@@ -23,6 +23,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar setBarTintColor:kRGBACOLOR(44, 173, 76, 1.0)];
 }
 
 
@@ -30,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNavTitle:@"商户保理协议管理"];
-    [self.navigationController.navigationBar setBarTintColor:kRGBACOLOR(44, 173, 76, 1.0)];
+    
     
     self.view.backgroundColor = kRGBACOLOR(207, 207, 207, 1.0);
     self.protocolManagerTableView = [UITableView new];
@@ -75,6 +76,7 @@
     static NSString *identifier = @"CTProtocolManagerTableViewCell";
     //从队列中取出单元格
     CTProtocolManagerTableViewCell *cell = [self.protocolManagerTableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //为单元格的label设置数据
     NSDictionary *dic = self.protocolManagerArray[indexPath.row];
@@ -94,7 +96,7 @@
         case 0:
         {
             CTProtocolManagerDetailViewController *view = [[CTProtocolManagerDetailViewController alloc] init];
-            
+            view.index = 0;
             [self QRCodeScanVC:view];
             
             
@@ -103,7 +105,7 @@
         case 1:
         {
             CTProtocolManagerDetailViewController *view = [[CTProtocolManagerDetailViewController alloc] init];
-            
+            view.index = 1;
             [self QRCodeScanVC:view];
         }
             break;
