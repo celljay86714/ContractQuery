@@ -12,6 +12,9 @@ typedef void (^BottomViewClickBlock) (void);
 @interface CTBottomView : UIView
 
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIButton *stateBtn;
+//@property (nonatomic, strong) UIButton *stateBtn;
+@property (nonatomic, strong) UILabel *stateLabel;
 @property (nonatomic, copy) BottomViewClickBlock bottomViewClickBlock;
+
+- (void)updateStateLabelWithText:(NSString *)text;
 @end

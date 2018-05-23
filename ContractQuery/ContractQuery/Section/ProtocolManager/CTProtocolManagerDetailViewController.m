@@ -94,7 +94,8 @@
         viewController.callBack = ^(id responseData) {
             
             weakSelf.stateListData = responseData;
-            [weakSelf.bottomView.stateBtn setTitle:weakSelf.stateListData.processName forState:UIControlStateNormal];
+//            [weakSelf.bottomView.stateBtn setTitle:weakSelf.stateListData.processName forState:UIControlStateNormal];
+            [weakSelf.bottomView updateStateLabelWithText:weakSelf.stateListData.processName];
             //request
             
             
@@ -301,7 +302,7 @@
         _promptLabel = [[UILabel alloc] init];
         _promptLabel.backgroundColor = [UIColor clearColor];
         CGFloat promptLabelX = 0;
-        CGFloat promptLabelY = 0.73 * self.view.frame.size.height;
+        CGFloat promptLabelY = 0.73 * self.view.frame.size.height-64;
         CGFloat promptLabelW = self.view.frame.size.width;
         CGFloat promptLabelH = 25;
         _promptLabel.frame = CGRectMake(promptLabelX, promptLabelY, promptLabelW, promptLabelH);

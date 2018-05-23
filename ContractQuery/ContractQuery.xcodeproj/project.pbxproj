@@ -11,6 +11,7 @@
 		814C1F6920B3B418002E0F73 /* CTLoginBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F6820B3B418002E0F73 /* CTLoginBaseClass.m */; };
 		814C1F6C20B3B46F002E0F73 /* CTLoginData.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F6B20B3B46F002E0F73 /* CTLoginData.m */; };
 		814C1F6F20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F6E20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m */; };
+		814C1F7420B40C07002E0F73 /* UILabel+GetLabelSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C1F7220B40C06002E0F73 /* UILabel+GetLabelSize.m */; };
 		814C94B920B2A2C400D1CD05 /* CTBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 814C94B820B2A2C400D1CD05 /* CTBottomView.m */; };
 		81ED455920AEBCB2001F30C0 /* CTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81ED455820AEBCB2001F30C0 /* CTLoginViewController.m */; };
 		81ED456020AEC8FB001F30C0 /* CTStateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81ED455A20AEC8FB001F30C0 /* CTStateListViewController.m */; };
@@ -77,6 +78,8 @@
 		814C1F6B20B3B46F002E0F73 /* CTLoginData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTLoginData.m; sourceTree = "<group>"; };
 		814C1F6D20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTProtocolManagerDetailBaseClass.h; sourceTree = "<group>"; };
 		814C1F6E20B3FB2D002E0F73 /* CTProtocolManagerDetailBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTProtocolManagerDetailBaseClass.m; sourceTree = "<group>"; };
+		814C1F7220B40C06002E0F73 /* UILabel+GetLabelSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+GetLabelSize.m"; sourceTree = "<group>"; };
+		814C1F7320B40C07002E0F73 /* UILabel+GetLabelSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+GetLabelSize.h"; sourceTree = "<group>"; };
 		814C94B720B2A2C400D1CD05 /* CTBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTBottomView.h; sourceTree = "<group>"; };
 		814C94B820B2A2C400D1CD05 /* CTBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTBottomView.m; sourceTree = "<group>"; };
 		81ED455720AEBCB2001F30C0 /* CTLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTLoginViewController.h; sourceTree = "<group>"; };
@@ -189,6 +192,23 @@
 			path = UserManager;
 			sourceTree = "<group>";
 		};
+		814C1F7020B40A84002E0F73 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				814C1F7120B40ABC002E0F73 /* UILabel */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		814C1F7120B40ABC002E0F73 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				814C1F7320B40C07002E0F73 /* UILabel+GetLabelSize.h */,
+				814C1F7220B40C06002E0F73 /* UILabel+GetLabelSize.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		81ED455620AEBB74001F30C0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +282,7 @@
 		E21F3EDC20AE81AC00F8C27E /* ContractQuery */ = {
 			isa = PBXGroup;
 			children = (
+				814C1F7020B40A84002E0F73 /* Library */,
 				81F1570B20AFFEAB001405BD /* Resource */,
 				E21F3F2720AE9EFF00F8C27E /* Model */,
 				E21F3F1C20AE98F700F8C27E /* Section */,
@@ -590,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81ED456020AEC8FB001F30C0 /* CTStateListViewController.m in Sources */,
+				814C1F7420B40C07002E0F73 /* UILabel+GetLabelSize.m in Sources */,
 				814C94B920B2A2C400D1CD05 /* CTBottomView.m in Sources */,
 				81ED456120AEC8FB001F30C0 /* CTStateListViewModel.m in Sources */,
 				81ED456220AEC8FB001F30C0 /* CTStateListCell.m in Sources */,
