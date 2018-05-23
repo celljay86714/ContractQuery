@@ -188,11 +188,13 @@
     [parameters setObject:self.userNameTextField.text forKey:@"userId"];
     [parameters setObject:self.passwordTextField.text forKey:@"password"];
 
+    [SVProgressHUD showWithStatus:@"加载中..."];
     [DigApiRequestManager requestLoginWithInfo:parameters header:nil resultCallback:^(BOOL success, NSDictionary *responseData, NSError *error) {
 
         NSLog(@"----------%@,%@",responseData,error);
         if (success) {
 
+            [SVProgressHUD dismiss];
             self.model = [CTLoginBaseClass modelObjectWithDictionary:responseData];
             [CTUserManager sharedInstance].userId = responseData[@"data"][@"userId"];
             [CTUserManager sharedInstance].userName = responseData[@"data"][@"userName"];
@@ -205,6 +207,7 @@
         }
         else{
 
+            [SVProgressHUD showErrorWithStatus:@"请求失败"];
 //            if (faileBlock) {
 //                faileBlock(error);
 //            }

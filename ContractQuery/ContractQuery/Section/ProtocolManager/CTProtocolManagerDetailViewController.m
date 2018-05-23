@@ -270,6 +270,7 @@
             self.model = [CTProtocolManagerDetailBaseClass modelObjectWithDictionary:responseData];
             
             NSString *message = self.model.message;
+            [SVProgressHUD setMinimumDismissTimeInterval:1.5];
             [SVProgressHUD showInfoWithStatus:message];
             
             [_manager startRunning];
@@ -285,6 +286,7 @@
             self.model = [CTProtocolManagerDetailBaseClass modelObjectWithDictionary:responseData];
             
             NSString *message = self.model.message;
+            [SVProgressHUD setMinimumDismissTimeInterval:1.5];
             [SVProgressHUD showErrorWithStatus:message];
             
             [_manager startRunning];

@@ -805,10 +805,10 @@
 				INFOPLIST_FILE = ContractQuery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bqjr.beehive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmt.baolixieyi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8648bce-c587-430c-9e28-d36f8eb99d25";
-				PROVISIONING_PROFILE_SPECIFIER = "beehive-dev-cert";
+				PROVISIONING_PROFILE = "e99a92da-0657-4ebd-bb04-0717420a1af6";
+				PROVISIONING_PROFILE_SPECIFIER = mmt_baolixieyi_Dev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -818,6 +818,7 @@
 			baseConfigurationReference = 7EDDBAEB65BCA214B4285B9A /* Pods-ContractQuery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = H9Z4MVAQY2;
@@ -825,10 +826,10 @@
 				INFOPLIST_FILE = ContractQuery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bqjr.beehive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmt.baolixieyi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "62fe831f-260c-4b9a-8d04-fbf35de286a6";
-				PROVISIONING_PROFILE_SPECIFIER = "beehive-prd-cert";
+				PROVISIONING_PROFILE = "03c80e23-95b4-40f0-abc0-123d3a4fb127";
+				PROVISIONING_PROFILE_SPECIFIER = mmt_baolixieyi_Prd;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
