@@ -219,6 +219,7 @@
                     
                     self.stateListData = responseData;
                     
+                    [self.bottomView updateStateLabelWithText:self.stateListData.processName];
                     //request
                     [self changeReceiveInfoRequest];
                     
