@@ -57,6 +57,8 @@
     }];
     
     [self.button addTarget:self action:@selector(buttonseleted:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.footView.frame =  CGRectMake(0, 0, CGRectGetWidth(self.footView.frame), ([UIScreen mainScreen].bounds.size.height-355));
 }
 
 
