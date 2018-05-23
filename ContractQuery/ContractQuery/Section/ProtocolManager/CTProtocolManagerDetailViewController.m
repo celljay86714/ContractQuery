@@ -236,6 +236,7 @@
             UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             CTScanResultViewController *viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CTScanResultViewController"];
             NSArray *numArray = [self.result componentsSeparatedByString:@","];
+            
             viewController.codeString = numArray[0];
             
             [self.navigationController pushViewController:viewController animated:YES];
@@ -254,6 +255,12 @@
     [parameters setObject:@"Rgr&574@65HBq3Gp$m2exytWQ263X!$" forKey:@"accessKey"];
     NSArray *numArray = [self.result componentsSeparatedByString:@","];
     NSLog(@"%@",self.result);
+    
+    if (numArray.count<2) {
+        [SVProgressHUD showErrorWithStatus:@"数据异常"];
+        return;
+    }
+    
     [parameters setObject:numArray[1] forKey:@"contractNo"];
     
     
