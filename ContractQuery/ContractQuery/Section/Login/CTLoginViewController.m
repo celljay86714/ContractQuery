@@ -169,7 +169,7 @@
     
     
     self.versionLabel = [UILabel new];
-    self.versionLabel.text = @"V1.1";
+    self.versionLabel.text = @"V1.0";
     self.versionLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.versionLabel];
     [self.versionLabel mas_makeConstraints:^(MASConstraintMaker *make) {

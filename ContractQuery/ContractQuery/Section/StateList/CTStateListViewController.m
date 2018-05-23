@@ -16,6 +16,13 @@
 
 @implementation CTStateListViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:kRGBACOLOR(44, 173, 76, 1.0)];
+    
+    //    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

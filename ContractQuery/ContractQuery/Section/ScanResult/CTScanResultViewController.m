@@ -16,20 +16,23 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+
+//    [self.navigationController setNavigationBarHidden:YES];
 }
 
 
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
+//    [self.navigationController setNavigationBarHidden:NO];
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self.navigationController.navigationItem setHidesBackButton:YES];
+    [self.navigationItem setHidesBackButton:YES];
     
     self.viewModel = [CTScanResultModel new];
     self.viewModel.codeString = self.codeString;
@@ -46,8 +49,14 @@
         self.contractNo_label.text = self.viewModel.model.data.contractNo;
         self.linkman_label.text =  self.viewModel.model.data.linkman;
         self.retailCity_label.text =  self.viewModel.model.data.retailCity;
-        self.updateTms_label.text =  [NSString stringWithFormat:@"%f",self.viewModel.model.data.updateTms];
         self.process_label.text = self.viewModel.model.data.process;
+    
+        NSDate *sinceTime = [NSDate dateWithTimeIntervalSince1970:self.viewModel.model.data.updateTms];
+        
+        NSString *time = [sinceTime uxy_stringWithDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        
+        self.updateTms_label.text = time;
+        
         
     } faile:^(id responseData) {
         
