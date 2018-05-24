@@ -50,8 +50,13 @@
         self.linkman_label.text =  self.viewModel.model.data.linkman;
         self.retailCity_label.text =  self.viewModel.model.data.retailCity;
         self.process_label.text = self.viewModel.model.data.process;
+        
+//        NSString *updateTms = [NSString stringWithFormat:@"%f",self.viewModel.model.data.updateTms*1000];
+        double updateTms = self.viewModel.model.data.updateTms/1000;
     
-        NSDate *sinceTime = [NSDate dateWithTimeIntervalSince1970:self.viewModel.model.data.updateTms];
+        NSDate *sinceTime = [NSDate dateWithTimeIntervalSince1970:updateTms];
+        
+//        NSDate *sinceTime = [NSDate dateWithTimeIntervalSinceNow:self.viewModel.model.data.updateTms];
         
         NSString *time = [sinceTime uxy_stringWithDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         
@@ -60,9 +65,20 @@
         
     } faile:^(id responseData) {
         
-        [SVProgressHUD showErrorWithStatus:@"服务器异常请重试"];
+        [SVProgressHUD dismiss];
 
-        
+        if ([responseData isKindOfClass:[NSError class]])
+        {
+            NSError *error = (NSError *)responseData;
+    //        [SVProgressHUD showErrorWithStatus:@"服务器异常请重试"];
+            [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+        }
+        else
+        {
+            NSDictionary *dic = (NSDictionary *)responseData;
+            NSString *message = dic[@"message"];
+            [SVProgressHUD showErrorWithStatus:message];
+        }
     }];
     
     [self.button addTarget:self action:@selector(buttonseleted:) forControlEvents:UIControlEventTouchUpInside];

@@ -197,11 +197,18 @@
         [scanManager stopRunning];
         
         AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 //        ScanSuccessJumpVC *jumpVC = [[ScanSuccessJumpVC alloc] init];
 //        jumpVC.comeFromVC = ScanSuccessJumpComeFromWB;
 //        jumpVC.jump_URL = [obj stringValue];
 //        [self.navigationController pushViewController:jumpVC animated:YES];
         self.result = [obj stringValue];
+        
+        if (![self.result containsString:@","]) {
+            [SVProgressHUD showErrorWithStatus:@"这是一个无效的二维码"];
+            [_manager startRunning];
+            return;
+        }
         
         if (self.index == 0) {
             NSString *codeString = self.stateListData.processId;
