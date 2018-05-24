@@ -260,7 +260,15 @@
 - (void)changeReceiveInfoRequest
 {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    [parameters setObject:@"Rgr&574@65HBq3Gp$m2exytWQ263X!$" forKey:@"accessKey"];
+    
+    if ([CurrentAPIHost isEqualToString:PRODUCT_HOST]) {
+        [parameters setObject:@"3*Rgr&574&Qr5HBq3Gp$m2exy!63X!$" forKey:@"accessKey"];
+    }
+    else
+    {
+        [parameters setObject:@"Rgr&574@65HBq3Gp$m2exytWQ263X!$" forKey:@"accessKey"];
+    }
+    
     NSArray *numArray = [self.result componentsSeparatedByString:@","];
     NSLog(@"%@",self.result);
     

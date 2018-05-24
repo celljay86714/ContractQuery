@@ -15,7 +15,7 @@
 #define PRODUCT_HOST             @"http://sims.bqjr.cn/"
 
 
-#define CurrentAPIHost                    SIT_HOST
+#define CurrentAPIHost                    PRODUCT_HOST
 
 
 #endif /* NetWorkDefine_h */
