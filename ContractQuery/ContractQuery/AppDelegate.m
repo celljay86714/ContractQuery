@@ -21,6 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    [SVProgressHUD setMinimumDismissTimeInterval:1.5];
     
     CTLoginViewController *rootView = [[CTLoginViewController alloc] init];
     
