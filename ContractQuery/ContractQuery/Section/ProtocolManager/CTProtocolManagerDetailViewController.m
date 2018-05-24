@@ -218,23 +218,24 @@
             }
             else
             {
-                
-                UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                CTStateListViewController *viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CTStateListViewController"];
-                
-                
-                [self.navigationController pushViewController:viewController animated:YES];
-                
-                
-                viewController.callBack = ^(id responseData) {
-                    
-                    self.stateListData = responseData;
-                    
-                    [self.bottomView updateStateLabelWithText:self.stateListData.processName];
-                    //request
-                    [self changeReceiveInfoRequest];
-                    
-                };
+                [SVProgressHUD showErrorWithStatus:@"请选择协议状态"];
+                [_manager startRunning];
+//                UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                CTStateListViewController *viewController = [mainStoryBoard instantiateViewControllerWithIdentifier:@"CTStateListViewController"];
+//
+//
+//                [self.navigationController pushViewController:viewController animated:YES];
+//
+//
+//                viewController.callBack = ^(id responseData) {
+//
+//                    self.stateListData = responseData;
+//
+//                    [self.bottomView updateStateLabelWithText:self.stateListData.processName];
+//                    //request
+//                    [self changeReceiveInfoRequest];
+//
+//                };
             }
         }
         else if (self.index == 1)
